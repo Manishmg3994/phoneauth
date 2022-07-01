@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-##For starter templete
+## For starter templete
 ```
 
 |-- lib
@@ -103,7 +103,7 @@ A new Flutter project.
 |   |   |-- main.dart
 ```
 
-##root file and folders name for full project
+## root file and folders name for full project
 ```
 |-- lib
 |   |   |-- app
