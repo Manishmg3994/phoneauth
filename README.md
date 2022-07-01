@@ -4,7 +4,8 @@ A new Flutter project.
 
 ## Getting Started
 
-#for starter templete
+##For starter templete
+```
 
 |-- lib
 |   |   |-- app
@@ -100,8 +101,9 @@ A new Flutter project.
 |   |   |           |-- speechtotext.dart
 |   |   |           '-- usercurrentlocation.dart
 |   |   |-- main.dart
+```
 
-#root file and folders name for full project
+##root file and folders name for full project
 ```
 |-- lib
 |   |   |-- app
