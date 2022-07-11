@@ -6,13 +6,16 @@ class _IllustrationImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: Get.width,
-      height: Get.height,
+      width: Get.width * 0.5,
+      height: Get.width * 0.5,
       child: Lottie.asset(
         LottieConstant.auth,
         fit: BoxFit.fitWidth,
       ),
+      // SvgPicture.asset(
+      //   ImageVectorConstant.authenticationIllustration,
+      //   fit: BoxFit.fitWidth,
+      // ),
     );
-    ;
   }
 }

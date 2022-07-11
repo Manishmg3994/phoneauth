@@ -8,16 +8,16 @@ class _ResendButton extends GetView<AuthenticationController> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Didn't Received the Code ?"),
+        Text("Didn't receive the code ? "),
         Obx(
           () => TextButton(
             onPressed: (controller.isCanResendCode.value)
-                ? () => controller.goToHome() //controller.verifyPhoneNumber()
+                ? () => controller.verifyPhoneNumber()
                 : null,
             child: Text((controller.durationCountdown.value) > 0
                 ? "Resend (${controller.durationCountdown.value})"
                 : "Resend"),
-          ), //hardcoded but we will change this in backend video
+          ),
         )
       ],
     );

@@ -5,10 +5,18 @@ class _VerificationButton extends GetView<AuthenticationController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => ElevatedButton(
-        onPressed: () {
-          controller.goToHome();
-        },
-        child: Text("Verify"))); //hardcoded but we will change this
+    return Obx(
+      () => ElevatedButton(
+          onPressed: controller.isLoading.value
+              ? null
+              : () => controller.verifySmsCode(),
+          child: controller.isLoading.value
+              ? SizedBox(
+                  width: 30,
+                  height: 30,
+                  child: CircularProgressIndicator(),
+                )
+              : Text("Verify")),
+    );
   }
 }

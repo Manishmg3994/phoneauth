@@ -1,15 +1,17 @@
 library login_view;
 
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+
+import 'package:get/get.dart';
 import 'package:phoneauth/app/constants/assets_constant.dart';
 import 'package:phoneauth/app/features/login/controllers/login_controller.dart';
+import 'package:lottie/lottie.dart';
+import 'package:flutter/services.dart';
 
-part '../components/header_text.dart';
-part '../components/illustration_image.dart';
-part '../components/login_button.dart';
 part '../components/phone_number_field.dart';
+part '../components/illustration_image.dart';
+part '../components/header_text.dart';
+part '../components/login_button.dart';
 part '../components/registration_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -48,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen>
                 Spacer(flex: 4),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: _PhoneNumber(),
+                  child: _PhoneNumberField(),
                 ),
                 Spacer(flex: 2),
                 Padding(

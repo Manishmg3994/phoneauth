@@ -34,10 +34,12 @@ Future<void> _launchURL() async {
       'https://github.com/Manishmg3994/privacypolicy/blob/main/README.md';
 
   ///TODO privacy policy page
-  if (await canLaunch(_url)) {
-    await launch(_url,
-        forceSafariVC: true,
-        forceWebView: false,
-        enableJavaScript: true); //implement forceSafariVC for ios
+  if (await canLaunchUrl(Uri.parse(_url))) {
+    await launchUrl(
+      Uri.parse(_url),
+      // forceSafariVC: true,
+      // forceWebView: false,
+      // enableJavaScript: true
+    ); //implement forceSafariVC for ios
   }
 }

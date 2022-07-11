@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:mobile_number_picker/mobile_number_picker.dart';
 import 'package:phoneauth/app/config/routes/app_pages.dart';
 
+
+
+
 class LoginController extends GetxController {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   MobileNumberPicker? mobileNumber = MobileNumberPicker();
   MobileNumber? mobileNumberObject = MobileNumber();
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final phoneNumber = TextEditingController();
+
+  var phoneNumber = TextEditingController();
   final isLoading = false.obs;
   int mobilenogot = 0;
   @override
@@ -22,35 +26,60 @@ class LoginController extends GetxController {
     super.onInit();
   }
 
+  void goToRegistrationScreen() {
+    Get.offNamed(Routes.register);
+  }
+
+  void goToAuthenticationScreen() {
+    Get.toNamed(Routes.authentication);
+  }
+
+  void login() async {
+    if (formKey.currentState!.validate()) {
+      isLoading.value = true;
+
+      // await UserServices.phoneNumberExists(phoneNumber.text.trim(),
+      //     onError: (_) {
+      //   isLoading.value = false;
+      // }).then((exist) {
+      //   isLoading.value = false;
+      //   if (exist) {
+      //     Get.toNamed(
+      //       Routes.authentication,
+      //       parameters: {'phone_number': phoneNumber.text},
+      //     );
+      //   } else {
+      //     Get.snackbar(
+      //       "Login Failed Or Try Register",
+      //       "your phone number not exist",
+      //       backgroundColor: Colors.white,
+      //       snackPosition: SnackPosition.BOTTOM,
+      //     );
+      //   }
+      // });
+
+
+      //to comment this code and uncomment above code
+      await Future.delayed(const Duration(seconds: 1), () {
+        isLoading.value = false;
+        Get.toNamed(
+          Routes.authentication,
+          parameters: {'phone_number': phoneNumber.text},
+        );
+      });
+    }
+  }
+
   void getMobileNo() async {
     try {
       mobileNumber?.mobileNumber();
       mobileNumber?.getMobileNumberStream.listen((event) {
         if (event?.states == PhoneNumberStates.PhoneNumberSelected) {
           mobileNumberObject = event;
-          phoneNumber.text = mobileNumberObject!
-              .completeNumber!; //you can choose it without country code and can make a different column for country code in ui
+          phoneNumber.text = mobileNumberObject!.completeNumber!;
           login();
         }
       });
     } catch (e) {}
-  }
-
-  void goToRegistrationScreen() {
-    Get.off(Routes.register); //Todo we will add and create that
-  }
-
-  void goToAuthenticationScreen() {
-    Get.to(Routes.authentication); //also we we will crw=eate and add <further>
-  }
-
-//For login we can create afunction but we will cover that in backend video
-  void login() async {
-    await Future.delayed(
-      const Duration(
-        milliseconds: 1000,
-      ),
-    );
-    goToAuthenticationScreen();
   }
 }

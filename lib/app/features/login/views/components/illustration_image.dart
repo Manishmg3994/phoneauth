@@ -7,11 +7,16 @@ class _IllustrationImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: Get.width * 0.5,
-      height: Get.height * 0.5,
+      height: Get.width * 0.5,
       child: Lottie.asset(
         LottieConstant.login,
         fit: BoxFit.fitWidth,
       ),
+      // SvgPicture.asset(
+      //   ImageVectorConstant.loginIllustration,
+      //   fit: BoxFit.fitWidth,
+      // ),
     );
   }
 }
+

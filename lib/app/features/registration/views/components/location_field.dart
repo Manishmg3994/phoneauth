@@ -15,7 +15,7 @@ class _LocationField extends GetView<RegistrationController> {
       },
       controller: controller.location,
       maxLength: 250,
-      autofillHints: const [AutofillHints.postalAddress],
+      autofillHints: [AutofillHints.postalAddress],
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (value) {
         if (value == null || value.trim() == "") return "";

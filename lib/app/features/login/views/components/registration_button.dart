@@ -8,10 +8,11 @@ class _RegistrationButton extends GetView<LoginController> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Dont Have an Account ?"),
+        Text("Don't have an account ?"),
         TextButton(
-            onPressed: () => controller.goToRegistrationScreen(),
-            child: Text("Register"))
+          onPressed: () => controller.goToRegistrationScreen(),
+          child: Text("Register"),
+        )
       ],
     );
   }

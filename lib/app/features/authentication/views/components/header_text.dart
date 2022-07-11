@@ -7,24 +7,23 @@ class _HeaderText extends GetView<AuthenticationController> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "Verification Code",
-          style: Theme.of(context).textTheme.headline5,
-        ),
-        const SizedBox(
-          height: 5,
-        ),
+        Text("Verification Code", style: Theme.of(context).textTheme.headline5),
+        SizedBox(height: 5),
         RichText(
           text:
               TextSpan(style: Theme.of(context).textTheme.bodyText2, children: [
-            const TextSpan(text: "Please Enter The code Sent To"),
+            TextSpan(text: "Please enter the code sent to "),
             TextSpan(
-                text: "+9198xxxx3994",
+                text: controller.phoneNumber ??
+                    // controller.registrant?.phoneNumber 
+                    // ??
+                    "-",
                 style: Theme.of(context)
                     .textTheme
                     .headline6!
                     .copyWith(fontSize: 16))
           ]),
+          textAlign: TextAlign.center,
         )
       ],
     );

@@ -1,8 +1,5 @@
 part of registration_view;
 
-
-
-
 class _HeaderText extends StatelessWidget {
   const _HeaderText({Key? key}) : super(key: key);
 
@@ -10,9 +7,13 @@ class _HeaderText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text("Register Now",style: Theme.of(context).textTheme.headline5,),
-      const SizedBox(height: 5,),
-      const Text("Please enter your Phone Number and Name ")],
+        Text("Registration", style: Theme.of(context).textTheme.headline5),
+        SizedBox(height: 5),
+        Text(
+          "Please enter your name, phone number and address to register",
+          textAlign: TextAlign.center,
+        )
+      ],
     );
   }
 }

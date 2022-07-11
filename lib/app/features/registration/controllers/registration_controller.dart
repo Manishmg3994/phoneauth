@@ -13,6 +13,7 @@ class RegistrationController extends GetxController {
   double? longitude;
   Position? position;
   List<Placemark?>? placeMarks;
+  final isLoading = false.obs;
 
   final TextEditingController phoneNumber = TextEditingController();
   final location = TextEditingController();
@@ -75,4 +76,17 @@ class RegistrationController extends GetxController {
       }
     }
   }
+   void register() async {
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+      isLoading.value = true;
+      await Future.delayed(
+        const Duration(
+          milliseconds: 1000,
+        ),
+      );
+      isLoading.value = false;
+      goToAuthScreen();
+    }
+   }
 }
