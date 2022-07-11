@@ -41,11 +41,18 @@ dependencies:
   #for theme<dark or light> management helper package
   get_it:
   get_storage:
-  #for permissions and firebase related stuff
+  #for permissions and firebase related stuff (UPCOMING)
   permission_handler: 
   cloud_firestore:
   firebase_auth: 
   firebase_core:
+  #for helper projects like autofill PHONE Number url_launcher
+  mobile_number_picker:
+  url_launcher:
+  geolocator:
+  geocoding:
+  
+
    
   
  

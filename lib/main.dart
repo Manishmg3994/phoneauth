@@ -21,7 +21,7 @@ class MyApp extends GetView<ThemeViewModel> {
   Widget build(BuildContext context) {
     Get.put(ThemeViewModel());
     Get.find<ThemeViewModel>();
-    
+
     return GetMaterialApp(
       initialRoute: AppPages.initial, //TODO We will create route page
       title: "Phone Auth",
@@ -29,6 +29,7 @@ class MyApp extends GetView<ThemeViewModel> {
       darkTheme: AppBasicTheme.getDarkThemeData(),
       themeMode: controller
           .theme, // if you are using provider then you can register your provider in main function and can use ThemeVidewModel().theme;
+      debugShowCheckedModeBanner: false,
       getPages: AppPages.routes, //Todo routes
     );
   }
