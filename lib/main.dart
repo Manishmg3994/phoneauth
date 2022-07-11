@@ -26,7 +26,7 @@ class MyApp extends GetView<ThemeViewModel> {
       initialRoute: AppPages.initial, //TODO We will create route page
       title: "Phone Auth",
       theme: AppBasicTheme.getThemeData(), //Todo Create a theme Design
-      darkTheme: AppBasicTheme.getDarkThemeData(),
+      darkTheme: AppBasicTheme.getThemeDataDark(),
       themeMode: controller
           .theme, // if you are using provider then you can register your provider in main function and can use ThemeVidewModel().theme;
       debugShowCheckedModeBanner: false,
